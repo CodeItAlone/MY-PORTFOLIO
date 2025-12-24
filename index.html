@@ -7,13 +7,23 @@
     <title>Subrato Kundu</title>
     <meta name="description" content="A showcase of my work and skills.">
 
-    <link rel="stylesheet" href="styles.css">
-
+    <!-- Preconnect to external domains for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Font with display=swap to prevent render blocking -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="hero.png" as="image">
+    
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Defer non-critical CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 </head>
 
 <body>
@@ -43,7 +53,7 @@
 
     <main>
 
-        <!-- HERO (UNCHANGED) -->
+        <!-- HERO -->
         <section id="home" class="hero">
             <div class="container hero-content">
                 <div class="hero-text">
@@ -59,13 +69,14 @@
                 </div>
 
                 <div class="hero-image">
-                    <img src="hero.png" alt="Subrato Kundu">
+                    <!-- Add width/height to prevent layout shift -->
+                    <img src="hero.png" alt="Subrato Kundu" width="400" height="400" loading="eager">
                     <div class="blob"></div>
                 </div>
             </div>
         </section>
 
-        <!-- ABOUT (UNCHANGED except HTML FIX) -->
+        <!-- ABOUT -->
         <section id="about" class="about">
             <div class="container">
                 <h2 class="section-title">About Me</h2>
@@ -103,7 +114,7 @@
             </div>
         </section>
 
-        <!-- SKILLS (UNCHANGED) -->
+        <!-- SKILLS -->
         <section id="skills" class="skills">
             <div class="container">
                 <h2 class="section-title">My Skills</h2>
@@ -122,7 +133,7 @@
             </div>
         </section>
 
-        <!-- PROJECTS (CONTENT UPDATED ONLY) -->
+        <!-- PROJECTS -->
         <section id="projects" class="projects">
             <div class="container">
                 <h2 class="section-title">Featured Projects</h2>
@@ -131,10 +142,8 @@
 
                     <!-- PROJECT 1 -->
                     <div class="project-card" data-tilt data-tilt-max="5">
-                        <div class="project-image"
-                              style="background-image: url('WritingOnAir_image.png');">
+                        <div class="project-image" style="background-image: url('WritingOnAir_image.png');">
                         </div>
-
 
                         <div class="project-info">
                             <h3>Writing On Air</h3>
@@ -148,7 +157,7 @@
 
                             <a href="https://github.com/CodeItAlone/WritingOnAir.git"
                                class="btn-link"
-                               target="_blank">
+                               target="_blank" rel="noopener noreferrer">
                                 View Code <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -156,8 +165,7 @@
 
                     <!-- PROJECT 2 -->
                     <div class="project-card" data-tilt data-tilt-max="5">
-                       <div class="project-image"
-                              style="background-image: url('Portfolioimage.png');">
+                       <div class="project-image" style="background-image: url('Portfolioimage.png');">
                         </div>
                         <div class="project-info">
                             <h3>Portfolio Website</h3>
@@ -171,7 +179,7 @@
 
                             <a href="https://github.com/CodeItAlone/MY-PORTFOLIO.git"
                                class="btn-link"
-                               target="_blank">
+                               target="_blank" rel="noopener noreferrer">
                                 View Code <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -181,76 +189,74 @@
             </div>
         </section>
 
-        <!-- CONTACT (UPGRADED, THEME SAFE) -->
+        <!-- CONTACT -->
         <section id="contact" class="contact">
-    <div class="container">
+            <div class="container">
 
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="contact-text">
-            Have a project in mind or just want to say hi?
-        </p>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="contact-text">
+                    Have a project in mind or just want to say hi?
+                </p>
 
-        <form class="contact-form"
-              action="https://formspree.io/f/abcdwxyz"
-              method="POST">
+                <form class="contact-form"
+                      action="https://formspree.io/f/abcdwxyz"
+                      method="POST">
 
-            <div class="form-row">
-                <input type="text"
-                       name="name"
-                       placeholder="Your Name"
-                       required>
+                    <div class="form-row">
+                        <input type="text"
+                               name="name"
+                               placeholder="Your Name"
+                               required
+                               autocomplete="name">
 
-                <input type="email"
-                       name="email"
-                       placeholder="Your Email"
-                       required>
+                        <input type="email"
+                               name="email"
+                               placeholder="Your Email"
+                               required
+                               autocomplete="email">
+                    </div>
+
+                    <textarea name="message"
+                              rows="4"
+                              placeholder="Your Message"
+                              required></textarea>
+
+                    <input type="hidden"
+                           name="_subject"
+                           value="New message from portfolio website">
+
+                    <button type="submit" class="btn btn-primary">
+                        Send Message
+                    </button>
+                </form>
+
+                <p style="margin-top: 1.5rem; color: #94a3b8;">
+                    Or email me directly at:
+                    <a href="mailto:subrato213432@gmail.com"
+                       style="color: var(--primary-color); font-weight: 600;">
+                        subrato213432@gmail.com
+                    </a>
+                </p>
+
             </div>
-
-            <textarea name="message"
-                      rows="4"
-                      placeholder="Your Message"
-                      required></textarea>
-
-            <!-- IMPORTANT: Email subject -->
-            <input type="hidden"
-                   name="_subject"
-                   value="New message from portfolio website">
-
-            <button type="submit" class="btn btn-primary">
-                Send Message
-            </button>
-        </form>
-
-        <!-- DIRECT EMAIL DISPLAY (ONLY SOURCE OF CONTACT) -->
-        <p style="margin-top: 1.5rem; color: #94a3b8;">
-            Or email me directly at:
-            <a href="mailto:subrato213432@gmail.com"
-               style="color: var(--primary-color); font-weight: 600;">
-                subrato213432@gmail.com
-            </a>
-        </p>
-
-    </div>
-</section>
-
-
+        </section>
 
     </main>
 
-    <!-- FOOTER (UNCHANGED) -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 Subrato Kundu. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- CANVAS / SPACE BACKGROUND (UNCHANGED) -->
+    <!-- CANVAS / SPACE BACKGROUND -->
     <div id="canvas-container"></div>
 
-    <!-- SCRIPTS (UNCHANGED) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-    <script src="script.js"></script>
+    <!-- SCRIPTS - Defer for better performance -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script defer src="script.js"></script>
 
 </body>
 </html>
