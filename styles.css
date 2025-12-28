@@ -49,9 +49,13 @@ img {
 }
 
 .hero-image img {
-    width: 400px;
-    height: 400px;
+    width: clamp(320px, 42vw, 640px);
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
 }
 
 /* ================= CANVAS ================= */
@@ -154,11 +158,11 @@ ul {
 
 /* ================= HERO SECTION ================= */
 .hero {
-    min-height: 100vh;
+    min-height: 100vh;          /* full screen */
     display: flex;
-    align-items: center;
-    padding-top: 80px;
-    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .hero-content {
@@ -257,15 +261,18 @@ ul {
 }
 
 .hero-image img {
+    width: clamp(320px, 42vw, 640px);
     max-width: 100%;
     height: auto;
+    object-fit: cover;
     position: relative;
     z-index: 1;
+    transition: transform 0.3s ease;
 }
 
 .blob {
-    width: 400px;
-    height: 400px;
+    width: clamp(340px, 42vw, 640px);
+    height: clamp(340px, 42vw, 640px);
     background: linear-gradient(to right, var(--primary-color), var(--accent-color));
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     animation: blob-bounce 10s infinite ease-in-out alternate;

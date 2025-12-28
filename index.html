@@ -11,19 +11,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
+
     <!-- Font with display=swap to prevent render blocking -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- Preload critical resources -->
     <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="hero.png" as="image">
-    
+
     <link rel="stylesheet" href="styles.css">
 
     <!-- Defer non-critical CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
 </head>
 
 <body>
@@ -120,15 +123,33 @@
                 <h2 class="section-title">My Skills</h2>
 
                 <div class="skills-grid">
-                    <div class="skill-card"><i class="fab fa-html5"></i><h3>HTML5</h3></div>
-                    <div class="skill-card"><i class="fab fa-css3-alt"></i><h3>CSS3</h3></div>
-                    <div class="skill-card"><i class="fab fa-js"></i><h3>JavaScript</h3></div>
-                    <div class="skill-card"><i class="fab fa-react"></i><h3>React</h3></div>
-                    <div class="skill-card"><i class="fab fa-java"></i><h3>Java</h3></div>
-                    <div class="skill-card"><i class="fas fa-leaf"></i><h3>Spring Boot</h3></div>
-                    <div class="skill-card"><i class="fas fa-database"></i><h3>MySQL</h3></div>
-                    <div class="skill-card"><i class="fab fa-git-alt"></i><h3>Git</h3></div>
-                    <div class="skill-card"><i class="fab fa-python"></i><h3>Python</h3></div>
+                    <div class="skill-card"><i class="fab fa-html5"></i>
+                        <h3>HTML5</h3>
+                    </div>
+                    <div class="skill-card"><i class="fab fa-css3-alt"></i>
+                        <h3>CSS3</h3>
+                    </div>
+                    <div class="skill-card"><i class="fab fa-js"></i>
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="skill-card"><i class="fab fa-react"></i>
+                        <h3>React</h3>
+                    </div>
+                    <div class="skill-card"><i class="fab fa-java"></i>
+                        <h3>Java</h3>
+                    </div>
+                    <div class="skill-card"><i class="fas fa-leaf"></i>
+                        <h3>Spring Boot</h3>
+                    </div>
+                    <div class="skill-card"><i class="fas fa-database"></i>
+                        <h3>MySQL</h3>
+                    </div>
+                    <div class="skill-card"><i class="fab fa-git-alt"></i>
+                        <h3>Git</h3>
+                    </div>
+                    <div class="skill-card"><i class="fab fa-python"></i>
+                        <h3>Python</h3>
+                    </div>
                 </div>
             </div>
         </section>
@@ -155,9 +176,8 @@
 
                             <p><strong>Tech:</strong> Python, OpenCV, MediaPipe</p>
 
-                            <a href="https://github.com/CodeItAlone/WritingOnAir.git"
-                               class="btn-link"
-                               target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/CodeItAlone/WritingOnAir.git" class="btn-link" target="_blank"
+                                rel="noopener noreferrer">
                                 View Code <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -165,7 +185,7 @@
 
                     <!-- PROJECT 2 -->
                     <div class="project-card" data-tilt data-tilt-max="5">
-                       <div class="project-image" style="background-image: url('Portfolioimage.png');">
+                        <div class="project-image" style="background-image: url('Portfolioimage.png');">
                         </div>
                         <div class="project-info">
                             <h3>Portfolio Website</h3>
@@ -177,9 +197,28 @@
 
                             <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
 
-                            <a href="https://github.com/CodeItAlone/MY-PORTFOLIO.git"
-                               class="btn-link"
-                               target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/CodeItAlone/MY-PORTFOLIO.git" class="btn-link" target="_blank"
+                                rel="noopener noreferrer">
+                                View Code <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-card" data-tilt data-tilt-max="5">
+                        <div class="project-image" style="background-image: url('FocusBuddy.jpeg');">
+                        </div>
+                        <div class="project-info">
+                            <h3>FocusBuddy</h3>
+
+                            <p>
+                                FocusBuddy is a social productivity app that enforces real execution by making progress
+                                public within small groups and penalizing inconsistency instead of rewarding fake
+                                streaks.
+                            </p>
+
+                            <p><strong>Tech:</strong> React Native, Spring Boot, MySQL, Git</p>
+
+                            <a href="https://github.com/CodeItAlone/FocusBuddy.git" class="btn-link" target="_blank"
+                                rel="noopener noreferrer">
                                 View Code <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -198,32 +237,17 @@
                     Have a project in mind or just want to say hi?
                 </p>
 
-                <form class="contact-form"
-                      action="https://formspree.io/f/abcdwxyz"
-                      method="POST">
+                <form class="contact-form" action="https://formspree.io/f/abcdwxyz" method="POST">
 
                     <div class="form-row">
-                        <input type="text"
-                               name="name"
-                               placeholder="Your Name"
-                               required
-                               autocomplete="name">
+                        <input type="text" name="name" placeholder="Your Name" required autocomplete="name">
 
-                        <input type="email"
-                               name="email"
-                               placeholder="Your Email"
-                               required
-                               autocomplete="email">
+                        <input type="email" name="email" placeholder="Your Email" required autocomplete="email">
                     </div>
 
-                    <textarea name="message"
-                              rows="4"
-                              placeholder="Your Message"
-                              required></textarea>
+                    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
 
-                    <input type="hidden"
-                           name="_subject"
-                           value="New message from portfolio website">
+                    <input type="hidden" name="_subject" value="New message from portfolio website">
 
                     <button type="submit" class="btn btn-primary">
                         Send Message
@@ -232,8 +256,7 @@
 
                 <p style="margin-top: 1.5rem; color: #94a3b8;">
                     Or email me directly at:
-                    <a href="mailto:subrato213432@gmail.com"
-                       style="color: var(--primary-color); font-weight: 600;">
+                    <a href="subrato213432@gmail.com" style="color: var(--primary-color); font-weight: 600;">
                         subrato213432@gmail.com
                     </a>
                 </p>
@@ -259,4 +282,5 @@
     <script defer src="script.js"></script>
 
 </body>
+
 </html>
