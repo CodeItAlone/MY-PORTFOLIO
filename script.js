@@ -1,23 +1,105 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Navigation Toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    const links = document.querySelectorAll('.nav-links li');
+    initTerminalReveal();
+    initHeroMetrics();
+    initTypingEffect();
+    initSmoothScroll();
+});
 
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
+/**
+ * Terminal Reveal Effect
+ * Uses Intersection Observer to trigger staggered entrance animations
+ */
+function initTerminalReveal() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
 
-    // Close mobile menu when a link is clicked
-    links.forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            hamburger.classList.remove('active');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('terminal-visible');
+                observer.unobserve(entry.target);
+            }
         });
-    });
+    }, observerOptions);
 
-    // Smooth Scrolling for Anchor Links
+    // Elements to observe
+    const revealElements = document.querySelectorAll('.project-card, .skill-category, .about-text, .about-visual, .roadmap-item, .contact-grid');
+    
+    revealElements.forEach((el, index) => {
+        el.classList.add('terminal-hidden');
+        // Add staggered delay via inline style
+        el.style.transitionDelay = `${(index % 3) * 100}ms`;
+        observer.observe(el);
+    });
+}
+
+/**
+ * Hero Metrics Engine
+ * Simulates live system activity in the background
+ */
+function initHeroMetrics() {
+    const metricsContainer = document.getElementById('hero-metrics');
+    if (!metricsContainer) return;
+
+    const logs = [
+        '[SYSTEM: KERNEL_LOADED]',
+        '[USER: SUBRATO_KUNDU]',
+        '[IP: 127.0.0.1]',
+        '[MEM: 16GB_READY]',
+        '[STK: JAVA/SPRING_BOOT]',
+        '[DEV: FULL_STACK_ASPIRANT]',
+        '[LOG: PROJECT_DEPLOYED]',
+        '[ERR: NONE]',
+        '[PING: 15ms]',
+        '[ARCH: x64_SYSTEM]',
+        '[SEC: ENCRYPTED]',
+        '[DB: SQL_CONNECTED]'
+    ];
+
+    setInterval(() => {
+        const line = document.createElement('div');
+        line.className = 'metric-line mono text-muted';
+        line.textContent = logs[Math.floor(Math.random() * logs.length)];
+        
+        metricsContainer.appendChild(line);
+        
+        // Remove old lines to keep container clean
+        if (metricsContainer.children.length > 8) {
+            metricsContainer.removeChild(metricsContainer.children[0]);
+        }
+        
+        // Auto-scroll or just let it stack
+    }, 2000);
+}
+
+/**
+ * Simple Typing Effect for Subtitle
+ */
+function initTypingEffect() {
+    const textEl = document.querySelector('.typing-text');
+    if (!textEl) return;
+
+    const text = textEl.textContent;
+    textEl.textContent = '';
+    
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            textEl.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, 50);
+        }
+    }
+    
+    type();
+}
+
+/**
+ * Smooth Scrolling with Offset
+ */
+function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -26,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                const headerOffset = 80;
+                const headerOffset = 100;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -36,134 +118,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
-    });
-
-    // Scroll Animations (Intersection Observer)
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    const animateElements = document.querySelectorAll('.section-title, .about-content, .skill-card, .project-card, .contact-text');
-
-    animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        observer.observe(el);
-    });
-
-    // Add CSS class for animation via JS to keep CSS clean
-    const style = document.createElement('style');
-    style.innerHTML = `
-        .fade-in {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-    `;
-    document.head.appendChild(style);
-
-    // Initialize Vanilla-Tilt
-    if (typeof VanillaTilt !== 'undefined') {
-        VanillaTilt.init(document.querySelectorAll(".project-card"), {
-            max: 15,
-            speed: 400,
-            glare: true,
-            "max-glare": 0.2,
-        });
-    }
-
-    // Three.js Background
-    initThreeJS();
-});
-
-function initThreeJS() {
-    const container = document.getElementById('canvas-container');
-    if (!container) return;
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    container.appendChild(renderer.domElement);
-
-    // Starfield
-    const starsGeometry = new THREE.BufferGeometry();
-    const starsCount = 5000; // Increased count for "filled with stars"
-    const posArray = new Float32Array(starsCount * 3);
-    const sizeArray = new Float32Array(starsCount);
-
-    for (let i = 0; i < starsCount; i++) {
-        posArray[i * 3] = (Math.random() - 0.5) * 100; // x
-        posArray[i * 3 + 1] = (Math.random() - 0.5) * 100; // y
-        posArray[i * 3 + 2] = (Math.random() - 0.5) * 100; // z
-        sizeArray[i] = Math.random() * 0.15; // Varying star sizes
-    }
-
-    starsGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-    starsGeometry.setAttribute('size', new THREE.BufferAttribute(sizeArray, 1));
-
-    // Custom shader material for better star rendering (optional, but PointsMaterial is simpler for now)
-    // Using PointsMaterial with size attenuation
-    const material = new THREE.PointsMaterial({
-        size: 0.1,
-        color: 0xffffff,
-        transparent: true,
-        opacity: 0.8,
-        sizeAttenuation: true
-    });
-
-    const starsMesh = new THREE.Points(starsGeometry, material);
-    scene.add(starsMesh);
-
-    camera.position.z = 1;
-
-    // Mouse Interaction
-    let mouseX = 0;
-    let mouseY = 0;
-
-    document.addEventListener('mousemove', (event) => {
-        mouseX = event.clientX / window.innerWidth - 0.5;
-        mouseY = event.clientY / window.innerHeight - 0.5;
-    });
-
-    // Animation Loop
-    const clock = new THREE.Clock();
-
-    function animate() {
-        requestAnimationFrame(animate);
-
-        const elapsedTime = clock.getElapsedTime();
-
-        // Rotate the entire starfield for a 3D feel
-        starsMesh.rotation.y = elapsedTime * 0.05;
-        starsMesh.rotation.x = elapsedTime * 0.01;
-
-        // Fly-through effect (optional, but requested "3d effects")
-        // Let's move the camera slightly based on mouse
-        camera.position.x += (mouseX * 2 - camera.position.x) * 0.05;
-        camera.position.y += (-mouseY * 2 - camera.position.y) * 0.05;
-        camera.lookAt(scene.position);
-
-        renderer.render(scene, camera);
-    }
-
-    animate();
-
-    // Handle Resize
-    window.addEventListener('resize', () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
     });
 }

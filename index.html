@@ -1,356 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subrato Kundu</title>
-    <meta name="description" content="A showcase of my work and skills.">
-
-    <!-- Preconnect to external domains for faster loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
-    <!-- Font with display=swap to prevent render blocking -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Preload critical resources -->
-    <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="hero.png" as="image">
-
+    <title>Subrato Kundu | Backend & Full Stack Engineer</title>
+    <meta name="description" content="Portfolio of Subrato Kundu, an aspiring Backend & Full Stack Developer specializing in Java, Spring Boot, and scalable systems.">
+    
+    <!-- Design System Base -->
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Defer non-critical CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </noscript>
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
+    <div class="grid-bg"></div>
+    <div class="scanline"></div>
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="container">
-            <a href="#" class="logo">CodeitAlone</a>
-
-            <nav class="navbar">
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container nav-container">
+            <div class="logo mono">
+                <span class="text-cyan">SUBRATO</span>_SYSTEM_<span class="text-emerald">v1.0</span>
+            </div>
+            <ul class="nav-links mono">
+                <li><a href="#hero" class="nav-item">ROOT</a></li>
+                <li><a href="#about" class="nav-item">ABOUT</a></li>
+                <li><a href="#skills" class="nav-item">SPECS</a></li>
+                <li><a href="#projects" class="nav-item">LOGS</a></li>
+                <li><a href="#contact" class="nav-item">LINK</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
     <main>
-
-        <!-- HERO -->
-        <section id="home" class="hero">
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <span class="greeting">Hello, I'm</span>
-                    <h1 class="name">Subrato Kundu</h1>
-                    <h2 class="role">B.Tech Student</h2>
-                    <p class="bio">Building digital experiences with passion and precision.</p>
-
-                    <div class="cta-buttons">
-                        <a href="#projects" class="btn btn-primary">View Work</a>
-                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
-                    </div>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-metrics mono" id="hero-metrics">
+                    <!-- Metrics injected by JS -->
+                    <div class="metric-line">[STATUS: ONLINE]</div>
+                    <div class="metric-line">[RUNTIME: JAVA/SPRING]</div>
+                    <div class="metric-line">[UPLOADING ASSETS...]</div>
                 </div>
-
-                <div class="hero-image">
-                    <!-- Add width/height to prevent layout shift -->
-                    <img src="hero.png" alt="Subrato Kundu" width="400" height="400" loading="eager">
-                    <div class="blob"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ABOUT -->
-        <section id="about" class="about">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-
-                <div class="about-content">
-                    <p>
-                        I'm a B.Tech student focused on backend and full-stack development.
-                        I build clean, responsive web applications using Java, Spring Boot and React.
+                
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="text-cyan">SUBRATO</span><br>
+                        <span class="text-emerald">KUNDU</span>
+                    </h1>
+                    <p class="hero-subtitle mono">
+                        <span class="typing-text">Aspiring Backend & Full Stack Developer</span>
                     </p>
+                    <p class="hero-description text-muted">
+                        Passionate about backend engineering, AI tools, scalable systems, and modern web development. Currently focused on Java, Spring Boot, JavaScript, and building real-world projects.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#projects" class="btn">VIEW_PROJECTS</a>
+                        <a href="#contact" class="btn btn-secondary">CONTACT_ME</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="education-timeline">
-                        <h3 class="education-title">Education</h3>
-
-                        <div class="education-item">
-                            <span class="year">2024 - Present</span>
-                            <h4>B.Tech</h4>
-                            <p class="institution">Chaibasa Engineering College</p>
-                        </div>
-
-                        <div class="education-item">
-                            <span class="year">2023</span>
-                            <h4>Intermediate</h4>
-                            <p class="institution">St. Xavier's Inter College</p>
-                        </div>
-
-                        <div class="education-item">
-                            <span class="year">2021</span>
-                            <h4>Matriculate</h4>
-                            <p class="institution">
-                                <strong>St. Xavier's High School</strong>
-                            </p>
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header mono">
+                    <span class="text-cyan">01.</span> ABOUT_ME
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="terminal-line">I am a Second-year BTech student focused on becoming a skilled backend and full-stack developer. I enjoy building practical projects, exploring AI-powered technologies, and learning system design and scalable backend architectures. I am currently learning Java, Spring Boot, backend development, and modern web technologies.</p>
+                    </div>
+                    <div class="about-visual mono">
+                        <div class="status-box">
+                            <div class="status-header">SYSTEM_PROFILE</div>
+                            <div class="status-body">
+                                <div>LEVEL: Sophomore</div>
+                                <div>LOC: Chaibasa, IN</div>
+                                <div>FOCUS: Scalability</div>
+                                <div>INTERESTS: AI/ML, CyberSec</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SKILLS -->
-        <section id="skills" class="skills">
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
             <div class="container">
-                <h2 class="section-title">My Skills</h2>
-
+                <div class="section-header mono">
+                    <span class="text-cyan">02.</span> CORE_SPECS
+                </div>
                 <div class="skills-grid">
-                    <div class="skill-card"><i class="fab fa-html5"></i>
-                        <h3>HTML5</h3>
+                    <div class="skill-category">
+                        <h3 class="mono text-cyan mb-md">FRONTEND</h3>
+                        <div class="skill-list mono">
+                            <div class="skill-tag">HTML5</div>
+                            <div class="skill-tag">CSS3</div>
+                            <div class="skill-tag">JavaScript</div>
+                            <div class="skill-tag">React</div>
+                            <div class="skill-tag">Tailwind CSS</div>
+                            <div class="skill-tag">React_Native</div>
+                            <div class="skill-tag">Next.js</div>
+                        </div>
                     </div>
-                    <div class="skill-card"><i class="fab fa-css3-alt"></i>
-                        <h3>CSS3</h3>
+                    <div class="skill-category">
+                        <h3 class="mono text-cyan mb-md">BACKEND</h3>
+                        <div class="skill-list mono">
+                            <div class="skill-tag">Java</div>
+                            <div class="skill-tag">Spring Boot</div>
+                            <div class="skill-tag">REST APIs</div>
+                            <div class="skill-tag">SQL</div>
+                            <div class="skill-tag">PostgreSQL</div>
+                            <div class="skill-tag">MongoDB</div>
+                            <div class="skill-tag">Hibernate ORM</div>
+                            <div class="skill-tag">JPA</div>
+                            <div class="skill-tag">JDBC</div>
+                            <div class="skill-tag">JWT Authentication</div>
+                            <div class="skill-tag">Spring Security</div>
+                            <div class="skill-tag">Swagger</div>
+                            <div class="skill-tag">Maven</div>
+                            <div class="skill-tag">Gradle</div>
+                        </div>
                     </div>
-                    <div class="skill-card"><i class="fab fa-js"></i>
-                        <h3>JavaScript</h3>
+                    <div class="skill-category">
+                        <h3 class="mono text-cyan mb-md">INFRASTRUCTURE</h3>
+                        <div class="skill-list mono">
+                            <div class="skill-tag">Git/GitHub</div>
+                            <div class="skill-tag">Docker</div>
+                            <div class="skill-tag">Supabase</div>
+                            <div class="skill-tag">Vercel</div>
+                            <div class="skill-tag">Render</div>
+                            <div class="skill-tag">Linux</div>
+                            <div class="skill-tag">Postman</div>
+                            <div class="skill-tag">Terminal/Shell</div>
+                        </div>
                     </div>
-                    <div class="skill-card"><i class="fab fa-react"></i>
-                        <h3>React</h3>
-                    </div>
-                    <div class="skill-card"><i class="fab fa-java"></i>
-                        <h3>Java</h3>
-                    </div>
-                    <div class="skill-card"><i class="fas fa-leaf"></i>
-                        <h3>Spring Boot</h3>
-                    </div>
-                    <div class="skill-card"><i class="fas fa-database"></i>
-                        <h3>MySQL</h3>
-                    </div>
-                    <div class="skill-card"><i class="fab fa-git-alt"></i>
-                        <h3>Git</h3>
-                    </div>
-                    <div class="skill-card"><i class="fab fa-python"></i>
-                        <h3>Python</h3>
+                    <div class="skill-category">
+                        <h3 class="mono text-cyan mb-md">EXPLORING</h3>
+                        <div class="skill-list mono">
+                            <div class="skill-tag">AI Tools</div>
+                            <div class="skill-tag">System Design</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PROJECTS -->
-        <section id="projects" class="projects">
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section">
             <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
-
+                <div class="section-header mono">
+                    <span class="text-cyan">03.</span> DEPLOYMENT_LOGS
+                </div>
                 <div class="projects-grid">
-
-                    <!-- PROJECT 1 -->
-                    <div class="project-card" data-tilt data-tilt-max="5">
-                        <div class="project-image" style="background-image: url('WritingOnAir_image.png');">
+                    <!-- Project 1 -->
+                    <div class="project-card mono">
+                        <div class="project-status">[STATUS: PRODUCTION]</div>
+                        <h3 class="project-title text-cyan">STUDENT_CONNECT</h3>
+                        <p class="project-desc text-muted">Production-ready student platform focused on collaboration and connectivity. Deployed using Vercel, Render, and Supabase.</p>
+                        <div class="project-tags">
+                            <span>React</span><span>Spring_Boot</span><span>Supabase</span>
                         </div>
-
-                        <div class="project-info">
-                            <h3>Writing On Air</h3>
-
-                            <p>
-                                A computer-vision based application that allows users
-                                to write in the air using hand gestures.
-                            </p>
-
-                            <p><strong>Tech:</strong> Python, OpenCV, MediaPipe</p>
-
-                            <a href="https://github.com/CodeItAlone/WritingOnAir.git" class="btn-link" target="_blank"
-                                rel="noopener noreferrer">
-                                View Code <i class="fas fa-arrow-right"></i>
-                            </a>
+                        <div class="project-links">
+                            <a href="https://github.com/CodeItAlone/Students-Connect" class="proj-link"><i class="fab fa-github"></i> REPO</a>
+                            <a href="https://students-connect.vercel.app/" class="proj-link text-emerald"><i class="fas fa-external-link-alt"></i> LIVE</a>
                         </div>
                     </div>
 
-                    <!-- PROJECT 2 -->
-                    <div class="project-card" data-tilt data-tilt-max="5">
-                        <div class="project-image" style="background-image: url('Portfolioimage.png');">
+                    <!-- Project 2 -->
+                    <div class="project-card mono">
+                        <div class="project-status">[STATUS: ACTIVE]</div>
+                        <h3 class="project-title text-cyan">FOCUS_BUDDY</h3>
+                        <p class="project-desc text-muted">Productivity and focus management application designed to improve concentration and workflow.</p>
+                        <div class="project-tags">
+                            <span>React_Native</span><span>Java</span><span>Spring</span>
                         </div>
-                        <div class="project-info">
-                            <h3>Portfolio Website</h3>
-
-                            <p>
-                                A responsive personal portfolio website
-                                built with clean UI and modern design.
-                            </p>
-
-                            <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-
-                            <a href="https://github.com/CodeItAlone/MY-PORTFOLIO.git" class="btn-link" target="_blank"
-                                rel="noopener noreferrer">
-                                View Code <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-card" data-tilt data-tilt-max="5">
-                        <div class="project-image" style="background-image: url('FocusBuddy.jpeg');">
-                        </div>
-                        <div class="project-info">
-                            <h3>FocusBuddy</h3>
-
-                            <p>
-                                FocusBuddy is a social productivity app that enforces real execution by making progress
-                                public within small groups and penalizing inconsistency instead of rewarding fake
-                                streaks.
-                            </p>
-
-                            <p><strong>Tech:</strong> React Native, Spring Boot, MySQL, Git</p>
-
-                            <a href="https://github.com/CodeItAlone/FocussBuddy" class="btn-link" target="_blank"
-                                rel="noopener noreferrer">
-                                View Code <i class="fas fa-arrow-right"></i>
-                            </a>
+                        <div class="project-links">
+                            <a href="https://github.com/CodeItAlone/FocussBuddy" class="proj-link"><i class="fab fa-github"></i> REPO</a>
                         </div>
                     </div>
 
-                    <!-- PROJECT 4 -->
-                    <div class="project-card" data-tilt data-tilt-max="5">
-                        <div class="project-image" style="background-image: url('Sammunat_LLC.png');">
+                    <!-- Project 3 -->
+                    <div class="project-card mono">
+                        <div class="project-status">[STATUS: PRODUCTION]</div>
+                        <h3 class="project-title text-cyan">MY_NOTES</h3>
+                        <p class="project-desc text-muted">Clean note-taking application with modern UI and seamless CRUD operations.</p>
+                        <div class="project-tags">
+                            <span>Next.js</span><span>MongoDB</span><span>Tailwind</span>
                         </div>
-                        <div class="project-info">
-                            <h3>Sammunat LLC</h3>
-
-                            <p>
-                                A responsive landing page developed as a technical assessment for an interview,
-                                showcasing pixel-perfect UI implementation and clean code structure.
-                            </p>
-
-                            <p><strong>Tech:</strong> React, Vite, CSS</p>
-
-                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                                <a href="https://github.com/CodeItAlone/Sammunat-LLC.git" class="btn-link"
-                                    target="_blank" rel="noopener noreferrer">
-                                    View Code <i class="fas fa-arrow-right"></i>
-                                </a>
-                                <a href="https://sammunat-llc-landing-ten.vercel.app/" class="btn-link" target="_blank"
-                                    rel="noopener noreferrer">
-                                    Live Demo <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
+                        <div class="project-links">
+                            <a href="https://github.com/CodeItAlone/My-Notes" class="proj-link"><i class="fab fa-github"></i> REPO</a>
+                            <a href="https://my-notes-nine-beryl.vercel.app/" class="proj-link text-emerald"><i class="fas fa-external-link-alt"></i> LIVE</a>
                         </div>
                     </div>
 
-                    <!-- PROJECT 5 -->
-                    <div class="project-card" data-tilt data-tilt-max="5">
-                        <div class="project-image" style="background-image: url('MyNotes_image.png');">
+                    <!-- Project 4 -->
+                    <div class="project-card mono">
+                        <div class="project-status">[STATUS: ARCHIVED]</div>
+                        <h3 class="project-title text-cyan">WRITING_ON_AIR</h3>
+                        <p class="project-desc text-muted">Creative web-based writing platform using computer vision for air-writing.</p>
+                        <div class="project-tags">
+                            <span>Python</span><span>OpenCV</span><span>MediaPipe</span>
                         </div>
-                        <div class="project-info">
-                            <h3>My Notes</h3>
-
-                            <p>
-                                A modern, full-stack CRUD note-taking application built with Next.js,
-                                MongoDB, and Tailwind CSS.
-                            </p>
-
-                            <p><strong>Tech:</strong> Next.js, MongoDB, Tailwind CSS</p>
-
-                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                                <a href="https://github.com/CodeItAlone/My-Notes.git" class="btn-link" target="_blank"
-                                    rel="noopener noreferrer">
-                                    View Code <i class="fas fa-arrow-right"></i>
-                                </a>
-                                <a href="https://my-notes-nine-beryl.vercel.app/" class="btn-link" target="_blank"
-                                    rel="noopener noreferrer">
-                                    Live Demo <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
+                        <div class="project-links">
+                            <a href="https://github.com/CodeItAlone/WritingOnAir" class="proj-link"><i class="fab fa-github"></i> REPO</a>
                         </div>
                     </div>
 
+                    <!-- Project 5 -->
+                    <div class="project-card mono">
+                        <div class="project-status">[STATUS: PRODUCTION]</div>
+                        <h3 class="project-title text-cyan">3D_PORTFOLIO</h3>
+                        <p class="project-desc text-muted">Interactive portfolio with modern 3D design elements and immersive UX.</p>
+                        <div class="project-tags">
+                            <span>Three.js</span><span>React_Three_Fiber</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/CodeItAlone/3D-portfolio" class="proj-link"><i class="fab fa-github"></i> REPO</a>
+                            <a href="https://portfolio.subratokundu.in" class="proj-link text-emerald"><i class="fas fa-external-link-alt"></i> LIVE</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT -->
-        <section id="contact" class="contact">
+        <!-- Journey Section -->
+        <section id="journey" class="section journey-section">
             <div class="container">
-
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="contact-text">
-                    Have a project in mind or just want to say hi?
-                </p>
-
-                <form class="contact-form" action="https://formspree.io/f/xbddjkdn" method="POST">
-
-                    <div class="form-row">
-                        <input type="text" name="name" placeholder="Your Name" required autocomplete="name">
-
-                        <input type="email" name="email" placeholder="Your Email" required autocomplete="email">
-                    </div>
-
-                    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-
-                    <input type="hidden" name="_subject" value="New message from portfolio website">
-
-                    <button type="submit" class="btn btn-primary">
-                        Send Message
-                    </button>
-                </form>
-
-                <p style="margin-top: 1.5rem; color: #94a3b8;">
-                    Or email me directly at:
-                    <a href="mailto:subrato213432@gmail.com" style="color: var(--primary-color); font-weight: 600;">
-                        subrato213432@gmail.com
-                    </a>
-                </p>
-
-                <div class="social-links">
-                    <a href="https://github.com/CodeItAlone" target="_blank" rel="noopener noreferrer"
-                        aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/subrato-kundu-35414233b/" target="_blank"
-                        rel="noopener noreferrer" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
+                <div class="section-header mono">
+                    <span class="text-cyan">04.</span> GROWTH_ROADMAP
                 </div>
-
+                <div class="roadmap mono">
+                    <div class="roadmap-item">
+                        <div class="roadmap-point"></div>
+                        <div class="roadmap-content">
+                            <div class="text-emerald">CURRENT_PHASE</div>
+                            <h4>Mastering Spring Boot & Backend Architectures</h4>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-point"></div>
+                        <div class="roadmap-content">
+                            <div class="text-cyan">IN_PROGRESS</div>
+                            <h4>Exploring AI-Powered Tools & Integration</h4>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-point"></div>
+                        <div class="roadmap-content">
+                            <div class="text-muted">TARGET</div>
+                            <h4>Building Real-World Scalable Systems</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header mono">
+                    <span class="text-cyan">05.</span> ESTABLISH_LINK
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-form-container">
+                        <form action="https://formspree.io/f/xbddjkdn" method="POST" class="terminal-form mono">
+                            <div class="input-group">
+                                <label>USER@SUBRATO:~$ NAME</label>
+                                <input type="text" name="name" required>
+                            </div>
+                            <div class="input-group">
+                                <label>USER@SUBRATO:~$ EMAIL</label>
+                                <input type="email" name="email" required>
+                            </div>
+                            <div class="input-group">
+                                <label>USER@SUBRATO:~$ MESSAGE</label>
+                                <textarea name="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">EXECUTE_SEND</button>
+                        </form>
+                    </div>
+                    <div class="contact-info mono">
+                        <div class="info-block">
+                            <div class="text-cyan">EMAIL</div>
+                            <a href="mailto:subrato213432@gmail.com">subrato213432@gmail.com</a>
+                        </div>
+                        <div class="info-block">
+                            <div class="text-cyan">GITHUB</div>
+                            <a href="https://github.com/CodeItAlone" target="_blank">github.com/CodeItAlone</a>
+                        </div>
+                        <div class="info-block">
+                            <div class="text-cyan">LINKEDIN</div>
+                            <a href="https://www.linkedin.com/in/subrato-kundu/" target="_blank">linkedin.com/in/subrato-kundu/</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="footer">
+    <footer class="footer mono">
         <div class="container">
-            <p>&copy; 2024 Subrato Kundu. All rights reserved.</p>
+            <p>Built with <span class="text-emerald">passion</span> for learning and development.</p>
+            <p class="text-muted">Subrato Kundu &copy; 2024</p>
         </div>
     </footer>
 
-    <!-- CANVAS / SPACE BACKGROUND -->
-    <div id="canvas-container"></div>
-
-    <!-- SCRIPTS - Defer for better performance -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-    <script defer src="script.js"></script>
-
-    <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
-
+    <script src="script.js"></script>
 </body>
-
 </html>
